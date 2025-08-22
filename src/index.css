@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import 'react-h5-audio-player/lib/styles.css';
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.wave-long {
+  display: flex;
+  width: 5px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  animation: waveMove 1.2s linear infinite;
+  transform-origin: bottom center;
+}
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 650;
+  font-style: normal;
+}
+
+
+@keyframes waveMove {
+  0% {
+    transform: scaleY(0.9);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scaleY(2.0);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scaleY(0.9);
+    opacity: 0.3;
+  }
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out forwards;
+}
