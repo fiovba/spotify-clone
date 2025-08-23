@@ -27,6 +27,7 @@ function MainLayout() {
   const [currentPlaylistSongs, setCurrentPlaylistSongs] = useState(null);
   const [showToast, setShowToast] = useState(false);
   const [isFullPlayerOpen, setIsFullPlayerOpen] = useState(false);
+  const [currentTab,setCurrentTab] = useState('Home')
 
   useAutoClose(isOpen, setIsOpen, isTrackPanelOpen, setIsTrackPanelOpen);
 
@@ -181,7 +182,7 @@ function MainLayout() {
           song={currentSong}
           onClick={() => setIsFullPlayerOpen(true)}
         />
-        <MobileBottomNav />
+        <MobileBottomNav user={user} setShowToast={setShowToast} showToast={showToast} setCurrentTab={setCurrentTab} currentTab={currentTab}  />
       </div>
 
       {/*Mobile full player */}

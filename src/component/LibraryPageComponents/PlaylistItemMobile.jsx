@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router";
 
 export default function PlaylistItem({ data,user }) {
+  const navigate = useNavigate()
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4" onClick={()=>navigate(`/playlist/${data.id}`)}>
       <img
         src={data.image}
         alt={data.name}

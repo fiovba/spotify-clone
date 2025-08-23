@@ -14,7 +14,8 @@ const SongCard = ({
   setIsTrackPanelOpen,
   user,
   setShowToast,
-  showToast
+  showToast,
+  onPlay
 }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showDuplicateModal, setShowDuplicateModal] = useState(false);
@@ -46,26 +47,25 @@ const SongCard = ({
 
     setShowDropdown(false);
   };
+const handlePlayClick = (e) => {
+  if (e) e.stopPropagation();
 
-  const handlePlayClick = (e) => {
-    if (e) e.stopPropagation();
+  if (!user) {
+    setShowToast(true);
+    return;
+  }
 
-    if (!user) {
-      setShowToast(true);
-      return;
-    }
+  setCurrentSong(song);
+  setCurrentPlaylistSongs(songs);
 
-    setCurrentSong(song);
-    setCurrentPlaylistSongs(songs);
 
-    // Mobil cihaz üçün panel açılışı
-    if (window.innerWidth < 768) {
-      setIsTrackPanelOpen(true);
-    } else {
-      // Masaüstündə də açmaq istəsən buranı saxla
-      setIsTrackPanelOpen(true);
-    }
-  };
+  if (onPlay) {
+    onPlay(song);
+  }
+
+  setIsTrackPanelOpen(true);
+};
+
 
   return (
     <div

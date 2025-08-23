@@ -6,7 +6,6 @@ import { useNavigate } from "react-router";
 const VolumeControl = ({
   currentSong,
   setIsTrackPanelOpen,
-  isTrackPanelOpen,
   volume,
   setVolume,
 }) => {

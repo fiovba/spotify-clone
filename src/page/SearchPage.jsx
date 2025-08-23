@@ -10,7 +10,7 @@ function SearchPage() {
   // parent layoutdan gələn datalar
   const { songs, artists, playlists } = useOutletContext();
 
-  // url-dən "q" parametrini götürürəm
+  // url-dən "q" parametrini götür
   const query = useQuery().get("q") || "";
 
   // filterlənmiş nəticələr üçün state-lər
